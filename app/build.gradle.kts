@@ -46,7 +46,7 @@ java {
 
 application {
     // Define the main class for the application.
-    mainClass = "piperinnshall.processing-language-server.AppKt"
+    mainClass = "piperinnshall.processing_language_server.AppKt"
 }
 
 tasks.named<Test>("test") {

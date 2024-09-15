@@ -1,1 +1,1 @@
-# processing_ls
+# processing-language-server
