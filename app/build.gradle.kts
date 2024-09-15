@@ -19,6 +19,12 @@ repositories {
 }
 
 dependencies {
+    // Java bindings for the Language Server Protocol
+    implementation("org.eclipse.lsp4j:org.eclipse.lsp4j:0.23.1")
+
+    // Generic JSON-RPC implementation
+    implementation("org.eclipse.lsp4j:org.eclipse.lsp4j.jsonrpc:0.23.1")
+
     // Use the Kotlin JUnit 5 integration.
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
 
@@ -40,7 +46,7 @@ java {
 
 application {
     // Define the main class for the application.
-    mainClass = "org.example.AppKt"
+    mainClass = "piperinnshall.processinglsp.AppKt"
 }
 
 tasks.named<Test>("test") {
