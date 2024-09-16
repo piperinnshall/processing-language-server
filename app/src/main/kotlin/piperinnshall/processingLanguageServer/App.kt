@@ -3,5 +3,14 @@
  */
 package piperinnshall.processingLanguageServer
 
+val test = BaseProtocol(
+    jsonrpc = "2.0", 
+    id = 1, 
+    method = "textDocument/completion", 
+    params = true
+)
+
 fun main() {
+    val jsonStr: String = encode(test)
+    decode(jsonStr.toByteArray())
 }

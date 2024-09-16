@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="piperinnshall.processingLanguageServer.AppTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-09-16T03:36:06" hostname="Pipers-MacBook-Pro.local" time="0.029">
+<testsuite name="piperinnshall.processingLanguageServer.AppTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-09-16T15:37:37" hostname="Pipers-MacBook-Pro.local" time="0.041">
   <properties/>
-  <testcase name="hasEncode()" classname="piperinnshall.processingLanguageServer.AppTest" time="0.029"/>
+  <testcase name="TestDecode()" classname="piperinnshall.processingLanguageServer.AppTest" time="0.027"/>
+  <testcase name="TestEncode()" classname="piperinnshall.processingLanguageServer.AppTest" time="0.013"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
