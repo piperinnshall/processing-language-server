@@ -8,6 +8,9 @@
 plugins {
     // Apply the org.jetbrains.kotlin.jvm Plugin to add support for Kotlin.
     alias(libs.plugins.kotlin.jvm)
+    
+    // Apply the Kotlin serialization Gradle plugin to use Kotlin serialization tools in your project
+    kotlin("plugin.serialization") version "2.0.20"
 
     // Apply the application plugin to add support for building a CLI application in Java.
     application
@@ -19,6 +22,9 @@ repositories {
 }
 
 dependencies {
+    // Kotlinx Serialization
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.1")
+
     // Java bindings for the Language Server Protocol
     implementation("org.eclipse.lsp4j:org.eclipse.lsp4j:0.23.1")
 
@@ -46,7 +52,7 @@ java {
 
 application {
     // Define the main class for the application.
-    mainClass = "piperinnshall.processing_language_server.AppKt"
+    mainClass = "piperinnshall.processingLanguageServer.AppKt"
 }
 
 tasks.named<Test>("test") {
