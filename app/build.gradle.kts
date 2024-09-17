@@ -25,12 +25,6 @@ dependencies {
     // Kotlinx Serialization
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.1")
 
-    // Java bindings for the Language Server Protocol
-    implementation("org.eclipse.lsp4j:org.eclipse.lsp4j:0.23.1")
-
-    // Generic JSON-RPC implementation
-    implementation("org.eclipse.lsp4j:org.eclipse.lsp4j.jsonrpc:0.23.1")
-
     // Use the Kotlin JUnit 5 integration.
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
 

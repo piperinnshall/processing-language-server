@@ -25,11 +25,9 @@ class AppTest {
     fun TestDecode(){
         val json = """{"jsonrpc":"2.0","id":1,"method":"text/completion","params":true}"""
         val incoming = "Content-Length: 65\r\n\r\n$json".toByteArray()
-        val actual = decode(incoming)
-        val contentLength = actual.second
-        val contentMethodName = actual.first
+        val (contentMessage, contentLength) = decode(incoming)
 
         assertEquals(contentLength, 65)
-        assertEquals(contentMethodName, "text/completion")
+        assertEquals(contentMessage.methodName, "text/completion")
     }
 }

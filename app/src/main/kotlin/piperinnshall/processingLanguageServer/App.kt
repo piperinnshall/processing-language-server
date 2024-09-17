@@ -1,16 +1,41 @@
 package piperinnshall.processingLanguageServer
 
-fun test() {
-    val test = MessageProtocol(jsonRpcVersion = "2.0", requestId = 1, methodName = "textDocument/completion", parameters = true)
-    val encoded: String = encode(test)
-    println(encode)
-    val decoded = decode(encoded.toByteArray())
-    println(decoded.first)
-    println(decoded.second)
+fun handleMessage(logger: LogHelper, messageBytes: ByteArray) {
+    logger.print(messageBytes.toString(Charsets.UTF_8))
 }
 
-fun handleMessage() {
+fun processInputFromStdin() {
+    val logger = log("log.txt")
+    val inputStream = System.`in`.buffered()
+    var currentData = byteArrayOf()
+
+    while (true) {
+        val bytesRead = inputStream.readNBytes(4096)
+
+        if (bytesRead.isEmpty()) {
+            continue
+        }
+
+        currentData += bytesRead
+
+        try {
+            while (true) {
+                val (messageLength, messageBytes) = splitMessages(currentData, true)
+
+                if (messageLength == -1) {
+                    break
+                }
+
+                handleMessage(logger, messageBytes)
+
+                currentData = currentData.sliceArray(messageLength until currentData.size)
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+    }
 }
 
 fun main() {
+    processInputFromStdin()
 }
