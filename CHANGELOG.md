@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/piperinnshall/processing-language-server/compare/v1.1.0...v1.2.0) (2024-09-17)
+
+
+### Features
+
+* **log:** add logging system with new file per run ([46f5de1](https://github.com/piperinnshall/processing-language-server/commit/46f5de1aed1d9b2d99e99c57df839b16ca3f328b))
+
 ## [1.1.0](https://github.com/piperinnshall/processing-language-server/compare/v1.0.0...v1.1.0) (2024-09-17)
 
 
